@@ -44,7 +44,7 @@ print("✅ 'New User Signup!' sichtbar!")
 
 # 6. Name und E-Mail eingeben
 driver.find_element(By.XPATH, "//input[@placeholder='Name']").send_keys("TestUser")
-driver.find_element(By.XPATH, "//input[@data-qa='signup-email']").send_keys("test@test3000.com")
+driver.find_element(By.XPATH, "//input[@data-qa='signup-email']").send_keys("test3000@test3000.to")
 time.sleep(1)
 
 # 7. Signup Button klicken
