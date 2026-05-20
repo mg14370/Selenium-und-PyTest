@@ -23,7 +23,7 @@ time.sleep(2)
 assert driver.title != "", "❌ Startseite nicht sichtbar!"
 print("✅ Startseite sichtbar!")
 
-# Cookie-Banner schließen falls vorhanden
+# Cookie Banner schließen falls vorhanden
 try:
     cookie_button = WebDriverWait(driver, 5).until(EC.element_to_be_clickable(
         (By.XPATH, "//button[contains(@class, 'fc-cta-consent')]")
@@ -47,7 +47,7 @@ driver.find_element(By.XPATH, "//input[@placeholder='Name']").send_keys("TestUse
 driver.find_element(By.XPATH, "//input[@data-qa='signup-email']").send_keys("test@test3000.com")
 time.sleep(1)
 
-# 7. Signup-Button klicken
+# 7. Signup Button klicken
 js_click(driver.find_element(By.XPATH, "//button[@data-qa='signup-button']"))
 time.sleep(2)
 
