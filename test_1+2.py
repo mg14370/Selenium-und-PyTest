@@ -17,10 +17,10 @@ def test_login_and_product(driver):
     driver.find_element(By.ID, "user-name").send_keys("standard_user")
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
     driver.find_element(By.ID, "login-button").click()
-    assert "inventory" in driver.current_url, "❌ Login fehlgeschlagen!"
+    assert "inventory" in driver.current_url, "Login fehlgeschlagen!"
     product = driver.find_element(By.XPATH, "//*[text()='Sauce Labs Backpack']")
-    assert product.is_displayed(), "❌ Produkt nicht gefunden!"
-    print("✅ Produkt 'Sauce Labs Backpack' wurde gefunden!")
+    assert product.is_displayed(), "Produkt nicht gefunden!"
+    print("Produkt 'Sauce Labs Backpack' wurde gefunden!")
 
 # Aufgabe 2: Parametrisierung
 @pytest.mark.parametrize("username", [
@@ -36,5 +36,5 @@ def test_login(driver, username):
     driver.find_element(By.ID, "user-name").send_keys(username)
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
     driver.find_element(By.ID, "login-button").click()
-    assert "inventory" in driver.current_url, f"❌ Login fehlgeschlagen für: {username}"
-    print(f"✅ Login erfolgreich für: {username}")
+    assert "inventory" in driver.current_url, f"Login fehlgeschlagen für: {username}"
+    print(f"Login erfolgreich für: {username}")
