@@ -21,7 +21,7 @@ time.sleep(2)
 
 # 3. Startseite überprüfen
 assert driver.title != "", "❌ Startseite nicht sichtbar!"
-print("✅ Startseite sichtbar!")
+print("Startseite sichtbar!")
 
 # Cookie Banner schließen falls vorhanden
 try:
@@ -39,8 +39,8 @@ js_click(signup_link)
 
 # 5. "New User Signup!" überprüfen
 signup_text = wait.until(EC.visibility_of_element_located((By.XPATH, "//*[text()='New User Signup!']")))
-assert signup_text.is_displayed(), "❌ 'New User Signup!' nicht sichtbar!"
-print("✅ 'New User Signup!' sichtbar!")
+assert signup_text.is_displayed(), "'New User Signup!' nicht sichtbar!"
+print("'New User Signup!' sichtbar!")
 
 # 6. Name und E-Mail eingeben
 driver.find_element(By.XPATH, "//input[@placeholder='Name']").send_keys("TestUser")
@@ -53,8 +53,8 @@ time.sleep(2)
 
 # 8. "ENTER ACCOUNT INFORMATION" überprüfen
 account_info = wait.until(EC.visibility_of_element_located((By.XPATH, "//*[text()='Enter Account Information']")))
-assert account_info.is_displayed(), "❌ 'ENTER ACCOUNT INFORMATION' nicht sichtbar!"
-print("✅ 'ENTER ACCOUNT INFORMATION' sichtbar!")
+assert account_info.is_displayed(), "'ENTER ACCOUNT INFORMATION' nicht sichtbar!"
+print("'ENTER ACCOUNT INFORMATION' sichtbar!")
 
 # 9. Details ausfüllen
 js_click(driver.find_element(By.ID, "id_gender1"))  # Titel: Mr
@@ -88,8 +88,8 @@ time.sleep(2)
 
 # 14. "ACCOUNT CREATED!" überprüfen
 created = wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[@data-qa='account-created']")))
-assert created.is_displayed(), "❌ 'ACCOUNT CREATED!' nicht sichtbar!"
-print("✅ 'ACCOUNT CREATED!' sichtbar!")
+assert created.is_displayed(), "'ACCOUNT CREATED!' nicht sichtbar!"
+print("'ACCOUNT CREATED!' sichtbar!")
 
 # Werbe-Popup schließen falls vorhanden
 try:
@@ -109,8 +109,8 @@ time.sleep(3)
 logged_in = wait.until(EC.visibility_of_element_located(
     (By.XPATH, "//*[contains(text(),'Logged in as')]")
 ))
-assert logged_in.is_displayed(), "❌ Nicht eingeloggt!"
-print("✅ Eingeloggt!")
+assert logged_in.is_displayed(), "Nicht eingeloggt!"
+print("Eingeloggt!")
 
 # 17. Delete Account klicken
 js_click(driver.find_element(By.XPATH, "//a[@href='/delete_account']"))
@@ -118,8 +118,8 @@ time.sleep(2)
 
 # 18. "ACCOUNT DELETED!" überprüfen
 deleted = wait.until(EC.visibility_of_element_located((By.XPATH, "//h2[@data-qa='account-deleted']")))
-assert deleted.is_displayed(), "❌ 'ACCOUNT DELETED!' nicht sichtbar!"
-print("✅ 'ACCOUNT DELETED!' sichtbar!")
+assert deleted.is_displayed(), "'ACCOUNT DELETED!' nicht sichtbar!"
+print("'ACCOUNT DELETED!' sichtbar!")
 
 js_click(driver.find_element(By.XPATH, "//a[@data-qa='continue-button']"))
 time.sleep(1)
