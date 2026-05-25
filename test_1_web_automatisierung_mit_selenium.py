@@ -21,8 +21,8 @@ driver.find_element(By.ID, "login-button").click()
 time.sleep(2)
 
 # Überprüfe ob Login erfolgreich war
-assert "inventory" in driver.current_url, "❌ Login fehlgeschlagen!"
-print("✅ Login erfolgreich!")  # wird nur erreicht wenn assert True ist
+assert "inventory" in driver.current_url, "Login fehlgeschlagen!"
+print("Login erfolgreich!")  # wird nur erreicht wenn assert True ist
 time.sleep(2)
 
 # Produkt "Sauce Labs Backpack" suchen
@@ -30,10 +30,10 @@ product = driver.find_element(By.XPATH, "//*[text()='Sauce Labs Backpack']")
 time.sleep(2)
 
 # Sicherstellen, dass das Produkt angezeigt wird
-assert product.is_displayed(), "❌ Produkt 'Sauce Labs Backpack' nicht gefunden!"
+assert product.is_displayed(), "Produkt 'Sauce Labs Backpack' nicht gefunden!"
 time.sleep(2)
 
-print("✅ Produkt 'Sauce Labs Backpack' wurde gefunden!")
+print("Produkt 'Sauce Labs Backpack' wurde gefunden!")
 
 driver.quit()
 
