@@ -26,5 +26,5 @@ def test_login(driver, username):
     driver.find_element(By.ID, "password").send_keys("secret_sauce")
     driver.find_element(By.ID, "login-button").click()
 
-    assert "inventory" in driver.current_url, f"❌ Login fehlgeschlagen für: {username}"
-    print(f"✅ Login erfolgreich für: {username}")
+    assert "inventory" in driver.current_url, f"Login fehlgeschlagen für: {username}"
+    print(f"Login erfolgreich für: {username}")
