@@ -1,11 +1,7 @@
-import logging
 import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-# Logging konfigurieren (Level INFO -> zeigt INFO, WARNING, ERROR)
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 
 def test_login_und_produkt():
@@ -29,7 +25,6 @@ def test_login_und_produkt():
 
     # Überprüfe ob Login erfolgreich war
     assert "inventory" in driver.current_url, "Login fehlgeschlagen!"
-    logging.info("Login erfolgreich!")  # wird nur erreicht wenn assert True ist
     time.sleep(2)
 
     # Produkt "Sauce Labs Backpack" suchen
@@ -40,11 +35,4 @@ def test_login_und_produkt():
     assert product.is_displayed(), "Produkt 'Sauce Labs Backpack' nicht gefunden!"
     time.sleep(2)
 
-    logging.info("Produkt 'Sauce Labs Backpack' wurde gefunden!")
-
     driver.quit()
-
-
-"""
-pytest test_1_web_automatisierung_mit_selenium.py
-"""
